@@ -1,3 +1,4 @@
+const todoRouter=   require("./routes/tutorials");
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -11,6 +12,9 @@ let todolist = [
   { id: 1, text: "Get Bread" },
   { id: 2, text: "Go for a walk walking" },
 ];
+
+
+app.use('/api',todoRouter)
 
 let todoId = 3;
 app.get("/", async (req, res) => {
